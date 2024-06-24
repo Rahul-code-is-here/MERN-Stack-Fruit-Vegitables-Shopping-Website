@@ -7,8 +7,8 @@ import authRoutes from "./routes/authRoute.js";
 import categoryRoutes from "./routes/categoryRoute.js";
 import productRoutes from "./routes/productRoute.js";
 import cors from "cors";
-// const path = require("path");
 import path from "path";
+import { fileURLToPath } from "url"; // Import necessary modules
 
 //config env
 dotenv.config();
@@ -18,6 +18,10 @@ connectDB();
 
 //rest object
 const app = express();
+
+// Define __dirname for ES module scope
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 // middelwares
 // json no use karva
